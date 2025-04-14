@@ -7,49 +7,6 @@ screen = pygame.display.set_mode((fenetreHauteur, fenetreLargeur))
 clock = pygame.time.Clock()
 running = True
 
-class Joueur:
-    def __init__(self,taille,couleur,animation,pAtt,vitesse,hp):
-        self.taille = taille
-        self.couleur = couleur
-        self.animation = animation
-        self.pAtt = pAtt
-        self.vitesse = vitesse
-        self.hp = hp
-        self.hpmax = hp
-        self.tué = False
-    def Boost(self):
-        self.pAtt = self.pAtt*self.pAtt
-    def regen(self):
-        if self.hp < self.hpmax:
-            self.hp += 1
-    def mort(self):
-        if self.hp == 0:
-            self.tué = True
-    def attacked(self):
-        hp -= 1
-        self.mort()
-
-
-class pc:
-    def __init__(self,couleur,puissance,taille,antivirus):
-        self.couleur = couleur
-        self.puissance = puissance
-        self.taille = taille
-        self.antivirus = antivirus
-    def broke(self):
-        self.puissance = 0
-    def virus(self,pcCiblé):
-        if pcCiblé.antivirus == "basique":
-            pcCiblé.broke()
-        else:
-            print("Antivirus trop puissant")
-            if self.puissance > 0:
-                self.puissance -= 1
-joueur = Joueur(5,(0,0,0),"",500,200,10000)
-
-
-computerFaible = pc("noir",64,32,"basique")
-computerPuissant = pc("blanc",128,64,"premium")
 
 class player():
     def __init__(self):
